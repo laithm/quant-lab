@@ -1,2 +1,2 @@
-def hi(a, b)
+def hi(a, b):
     print(a + b)
