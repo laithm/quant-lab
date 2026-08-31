@@ -1,13 +1,13 @@
 [project]
 name = "quant-lab"
 version = "0.1.0"
-description = "Laith's Quantitative Finance Research Lab"
+description = "Early notebooks for learning stochastic processes in Python"
 authors = [
     {name = "laithm",email = "laith.masri@gmail.com"}
 ]
 license = {text = "MIT"}
 readme = "README.md"
-requires-python = "^3.12"
+requires-python = ">=3.12,<4.0"
 dependencies = [
     "numpy (>=2.3.0,<3.0.0)",
     "pandas (>=2.3.0,<3.0.0)",
@@ -28,4 +28,3 @@ black = "^25.1.0"
 isort = "^6.0.1"
 mypy = "^1.16.1"
 pytest = "^8.4.0"
-
