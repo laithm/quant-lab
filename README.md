@@ -1,46 +1,41 @@
-# ⚡ quant-lab
+# Quantitative Finance Lab
 
-A structured research and development lab for mastering quantitative finance, mathematical modeling, algorithmic trading, and financial machine learning; built by Laith Masri.
+This is where I am keeping the smaller notebooks I write while I work through
+probability and quantitative finance properly. It is still an early learning
+repo. Right now it contains one Brownian-motion notebook, not a strategy
+library, backtester, or finished research framework.
 
----
+## What is here
 
-## 🧠 Purpose
+- [`notebooks/brownian_motion.ipynb`](notebooks/brownian_motion.ipynb) works
+  through one-, two-, and three-dimensional Brownian paths in Python.
+- `pyproject.toml` and `poetry.lock` pin the Python environment used for the
+  notebook.
 
-This lab is designed to:
-- Build a deep mathematical foundation for quantitative finance
-- Explore, simulate, and model stochastic processes and trading strategies
-- Develop production-grade research tooling using Python and Jupyter
-- Package research ideas into modular, reusable components
-- Serve as a personal quant portfolio and proof of work
+The notebook starts from the definition of a Wiener process, turns the
+increments into a discrete simulation, and checks the basic scaling rule
+\(\operatorname{Var}(B_t)=t\). The plots are useful for building intuition,
+but a plotted finite grid is still only an approximation to a continuous-time
+process.
 
----
+## Run it
 
-## 📁 Structure
+This repo uses Python 3.12 and Poetry.
 
-| Folder          | Description |
-|------------------|-------------|
-| `notebooks/`     | Jupyter-based exploration of stochastic calculus, models, simulations, visualizations |
-| `src/`  | Modular Python package containing clean research code, pricers, models, simulations |
-| `tests/`         | Unit tests for ensuring research code behaves correctly |
-| `requirements.txt` / `pyproject.toml` | Dependency & environment management using Poetry |
+```bash
+poetry install --no-root
+poetry run jupyter lab notebooks/brownian_motion.ipynb
+```
 
----
+The notebook uses a fixed random seed so the examples can be rerun. Change the
+seed if you want a different path.
 
-## 📚 Core Areas
+## What this does not contain yet
 
-- Brownian Motion, SDEs, and Ito Calculus
-- Option pricing (Black-Scholes, binomial trees)
-- Mean reversion & momentum strategies
-- Backtesting engines (VectorBT, custom)
-- Portfolio theory & risk metrics
-- Alpha factor research
-- ML models for price prediction
+There is no market-data pipeline, option pricer, trading strategy, or machine
+learning model here yet. I would rather add those as I understand and test them
+than list work that is not in the repository.
 
----
-
-## 🚀 Getting Started
-
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/laithm/quant-lab.git
-   cd quant-lab
+My next exercise is to move the simulation into a small tested Python module,
+then build geometric Brownian motion while keeping the assumptions and sanity
+checks visible.
